@@ -49,10 +49,14 @@ namespace Quest
                 "Red",
                 "Blue",
             });
+            // Hat for your adventurer
+            Hat dankHat = new Hat(){
+                Shininess = 7
+            };
             // Ask for name
             Console.WriteLine("What is your adventurer's name?");
             // Make a new "Adventurer" object using the "Adventurer" class with the provided name and created robe
-            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), dankRobe);
+            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), dankRobe, dankHat);
             Console.WriteLine(theAdventurer.GetDescription());
 
             // A list of challenges for the Adventurer to complete
