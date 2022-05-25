@@ -58,25 +58,34 @@ namespace Quest
                 favoriteBeatle
             };
 
-            // Loop through all the challenges and subject the Adventurer to them
-            foreach (Challenge challenge in challenges)
+            do
             {
-                challenge.RunChallenge(theAdventurer);
-            }
+                mainChallenge();
+                Console.WriteLine("Play again? (Yes or No)");
+            } while (Console.ReadLine() == "Yes");
 
-            // This code examines how Awesome the Adventurer is after completing the challenges
-            // And praises or humiliates them accordingly
-            if (theAdventurer.Awesomeness >= maxAwesomeness)
+            void mainChallenge()
             {
-                Console.WriteLine("YOU DID IT! You are truly awesome!");
-            }
-            else if (theAdventurer.Awesomeness <= minAwesomeness)
-            {
-                Console.WriteLine("Get out of my sight. Your lack of awesomeness offends me!");
-            }
-            else
-            {
-                Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+                // Loop through all the challenges and subject the Adventurer to them
+                foreach (Challenge challenge in challenges)
+                {
+                    challenge.RunChallenge(theAdventurer);
+                }
+
+                // This code examines how Awesome the Adventurer is after completing the challenges
+                // And praises or humiliates them accordingly
+                if (theAdventurer.Awesomeness >= maxAwesomeness)
+                {
+                    Console.WriteLine("YOU DID IT! You are truly awesome!");
+                }
+                else if (theAdventurer.Awesomeness <= minAwesomeness)
+                {
+                    Console.WriteLine("Get out of my sight. Your lack of awesomeness offends me!");
+                }
+                else
+                {
+                    Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+                }
             }
         }
     }
